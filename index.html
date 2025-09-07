@@ -9,7 +9,7 @@
 </head>
 <body>
   <main class="wrap">
- 
+    <!-- Panel izquierdo -->
     <section class="left">
       <div class="left-inner">
         <h1 class="budget-title">
@@ -33,22 +33,26 @@
       </div>
     </section>
 
-  
+    <!-- Panel derecho -->
     <section class="right">
       <div class="right-inner">
+        <!-- Radios de estado de pestañas (fuera de la barra) -->
+        <input type="radio" name="tab" id="tab-ingresos" checked hidden>
+        <input type="radio" name="tab" id="tab-egresos" hidden>
+
         <div class="right-head">
           <div class="head-left">
             <span class="plus">+</span>
             <h2>Transacción</h2>
           </div>
 
+          <!-- Barra de pestañas: solo labels -->
           <div class="segmented" role="tablist">
-            <button class="seg active" type="button">Ingresos</button>
-            <button class="seg" type="button">Egresos</button>
+            <label for="tab-ingresos" class="seg">Ingresos</label>
+            <label for="tab-egresos" class="seg">Egresos</label>
           </div>
         </div>
 
-        
         <div class="right-grid">
           <form class="form" autocomplete="off">
             <div class="field select">
@@ -71,19 +75,35 @@
             <button type="button" class="btn">Agregar</button>
           </form>
 
-          <ul class="items">
-            <li class="row">
-              <span class="name">Salario 1</span>
-              <span class="amount pos">+400.00</span>
-            </li>
-            <li class="row">
-              <span class="name">Salario 2</span>
-              <span class="amount pos">+400.00</span>
-            </li>
-          </ul>
-        </div>
+          <!-- Contenido: Ingresos -->
+          <div class="tab-content ingresos">
+            <ul class="items">
+              <li class="row">
+                <span class="name">Salario 1</span>
+                <span class="amount pos">+400.00</span>
+              </li>
+              <li class="row">
+                <span class="name">Salario 2</span>
+                <span class="amount pos">+400.00</span>
+              </li>
+            </ul>
+          </div>
 
-      </div>
+          <!-- Contenido: Egresos -->
+          <div class="tab-content egresos">
+            <ul class="items">
+              <li class="row">
+                <span class="name">Renta</span>
+                <span class="amount neg">-200.00</span>
+              </li>
+              <li class="row">
+                <span class="name">Comida</span>
+                <span class="amount neg">-100.00</span>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /right-grid -->
+      </div><!-- /right-inner -->
     </section>
   </main>
 </body>
